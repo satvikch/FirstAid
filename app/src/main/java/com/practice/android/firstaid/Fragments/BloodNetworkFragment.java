@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.practice.android.firstaid.Adapters.PagerAdapter;
+import com.practice.android.firstaid.Adapters.PagerAdapterBloodNetwork;
 import com.practice.android.firstaid.R;
 
 /**
@@ -31,19 +31,21 @@ public class BloodNetworkFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //     ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
 
         View inflatedView = inflater.inflate(R.layout.fragment_blood_network, container, false);
 
         TabLayout tabLayout = inflatedView.findViewById(R.id.tab_layout_bloodNetwork);
-        tabLayout.addTab(tabLayout.newTab().setText("Received request"));
-        tabLayout.addTab(tabLayout.newTab().setText("My request"));
+        tabLayout.addTab(tabLayout.newTab().setText("Received requests"));
+        tabLayout.addTab(tabLayout.newTab().setText("My requests"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = inflatedView.findViewById(R.id.view_pager_bloodNetwork);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
+        PagerAdapterBloodNetwork pagerAdapterBloodNetwork = new PagerAdapterBloodNetwork(getActivity().getSupportFragmentManager(),
+                tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapterBloodNetwork);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 

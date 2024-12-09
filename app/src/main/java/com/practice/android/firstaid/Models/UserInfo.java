@@ -12,25 +12,30 @@ import java.util.Map;
 
 public class UserInfo {
 
-    String Name;
-    String Gender;
-    String DOB;
-    String BloodGroup;
-    String PhoneNumber;
-    String Languages;
-    String InterestedinDonating;
-    String FirstLogin;
-    List Cities;
+    private String Name;
+    private String Gender;
+    private String DOB;
+    private String BloodGroup;
+    private String PhoneNumber;
+    private String Languages;
+    private String InterestedinDonating;
+    private String FirstLogin;
+    private String ProfileUrl;
+    private List<String> Cities;
+
+    public UserInfo() {
+    }
 
     public UserInfo(String Name,
-                       String Gender,
-                       String DOB,
-                       String BloodGroup,
-                       String PhoneNumber,
-                       String Languages,
-                       String InterestedinDonating,
-                       String FirstLogin,
-                       List Cities)
+                    String Gender,
+                    String DOB,
+                    String BloodGroup,
+                    String PhoneNumber,
+                    String Languages,
+                    String InterestedinDonating,
+                    String FirstLogin,
+                    String ProfileUrl,
+                    List Cities)
     {
         this.Name=Name;
         this.Gender=Gender;
@@ -40,6 +45,7 @@ public class UserInfo {
         this.Languages=Languages;
         this.InterestedinDonating=InterestedinDonating;
         this.FirstLogin=FirstLogin;
+        this.ProfileUrl = ProfileUrl;
         this.Cities=Cities;
     }
 
@@ -47,7 +53,7 @@ public class UserInfo {
         return BloodGroup;
     }
 
-    public List getCities() {
+    public List<String> getCities() {
         return Cities;
     }
 
@@ -79,8 +85,12 @@ public class UserInfo {
         return PhoneNumber;
     }
 
-    public void setBloodGroup(String bloodGroup) {
-        BloodGroup = bloodGroup;
+    public String getProfileUrl() {
+        return ProfileUrl;
+    }
+
+    public void setProfileUrl(String ProfileUrl) {
+        this.ProfileUrl = ProfileUrl;
     }
 
     @Exclude
@@ -95,6 +105,7 @@ public class UserInfo {
         result.put("Languages",Languages);
         result.put("InterestedinDonating",InterestedinDonating);
         result.put("FirstLogin",FirstLogin);
+        result.put("ProfileUrl", ProfileUrl);
         result.put("Cities",Cities);
         return result;
     }

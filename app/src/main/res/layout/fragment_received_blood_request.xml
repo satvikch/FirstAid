@@ -3,7 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.practice.android.firstaid.Fragments.ReceivedBloodRequest">
+
+    <Switch
+        android:id="@+id/filter_Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:gravity="left|center"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:switchPadding="8dp"
+        android:text="Requests from My cities"
+        android:textSize="12sp" />
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
